@@ -4,17 +4,19 @@ This repository contains test pod YAMLs for each policy type defined in the Kube
 
 ## Usage
 
-1. Configure [Pod Security Policies](https://kubernetes.io/docs/concepts/security/pod-security-standards/#policy-instantiation) or use a policy engine like [OPA/Gatekeeper](https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy) or [Kyverno](https://kyverno.io/policies/pod-security/) with the appropriate pod security policies configured.
+**1. Configure a Policy Instantiation**
 
-2. Apply test YAMLs
+Configure a [Policy Instantiation](https://kubernetes.io/docs/concepts/security/pod-security-standards/#policy-instantiation) for your cluster, like Kubernetes [Pod Security Policies (PSPs)](https://kubernetes.io/docs/concepts/security/pod-security-standards/#policy-instantiation), or policy engines like [OPA/Gatekeeper](https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy) and [Kyverno](https://kyverno.io/policies/pod-security/).
 
-You can apply all test YAMLs using the command:
+**2. Apply test YAMLs**
+
+Apply all test pod YAMLs using the command:
 
 ```shell
 kustomize build https://github.com/JimBugwadia/pod-security-tests/ | kubectl apply -f -
 ```
 
-Or, you can apply `Baseline` or `Restricted` YAMLs by appending the appropriate folder name:
+Or, apply `Baseline` or `Restricted` YAMLs by appending the appropriate folder name:
   * Baseline: `kustomize build https://github.com/JimBugwadia/pod-security-tests/baseline`
   * Restricted: `kustomize build https://github.com/JimBugwadia/pod-security-tests/restricted`
 
@@ -44,6 +46,12 @@ kubectl get pods proc-mount -o=jsonpath="{.spec.containers[*].securityContext.pr
 
 This output of the above command is expected to be `Default`.
 
+
+## Test Pod Labels
+
+All test pods are have the following labels defined:
+* `pod-security-standards/policy` with value of `Baseline` or `Restricted`.
+* `pod-security-standards/control` with a value that identifies the security control being tested.
 
 ## Pod Security Controls to Test Mappings
 
