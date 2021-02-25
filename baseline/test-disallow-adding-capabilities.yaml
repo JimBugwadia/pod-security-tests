@@ -1,0 +1,41 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: add-capabilities
+  labels:
+    pod-security-standards/policy: "Baseline"
+    pod-security-standards/control: "Capabilities"
+spec:
+  containers: 
+  - name: add-capabilities
+    image: kubernetes/pause
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 1000
+      capabilities:
+        add:
+        - SYS_TIME
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: add-capabilities-init-ctnr
+  labels:
+    pod-security-standards/policy: "Baseline"
+    pod-security-standards/control: "Capabilities"
+spec:
+  securityContext:
+    runAsNonRoot: true        
+    runAsUser: 1000
+  initContainers:
+    - name: add-capabilities-init
+      image: busybox
+      command: ["sleep", "1"]
+      securityContext:
+        capabilities:
+          add:
+          - SYS_RESOURCE
+  containers: 
+  - name: add-capabilities
+    image: kubernetes/pause

@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host-path-volumes
+  labels:
+    pod-security-standards/policy: "Baseline"
+    pod-security-standards/control: "HostPath_Volumes"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+  containers: 
+  - name: host-path
+    image: kubernetes/pause
+    volumeMounts:
+      - name: hostdir
+        mountPath: /tmp
+  volumes:
+  - name: hostdir
+    hostPath:
+        path: /root

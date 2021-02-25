@@ -1,0 +1,56 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: seccomp-pod
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Seccomp"   
+spec:
+  securityContext:
+    runAsNonRoot: true
+    seccompProfile:
+      type: Unconfined
+  containers: 
+  - name: seccomp
+    image: busybox
+    command: ["sleep", "9999"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: seccomp-ctnr
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Seccomp"    
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers: 
+  - name: seccomp
+    image: busybox
+    command: ["sleep", "9999"]
+    securityContext:
+      seccompProfile:
+        type: Unconfined
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: seccomp-init-ctnr
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Seccomp"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+  initContainers:
+  - name: seccomp-init
+    image: busybox
+    command: ["sleep", "9999"]
+    securityContext:
+      seccompProfile:
+        type: Unconfined    
+  containers: 
+   - name: seccomp
+     image: kubernetes/pause

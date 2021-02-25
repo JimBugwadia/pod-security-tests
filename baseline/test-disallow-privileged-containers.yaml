@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-container
+  labels:
+    pod-security-standards/policy: "Baseline"
+    pod-security-standards/control: "Privileged_Containers"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+  containers: 
+  - name: privileged-ctnr
+    image: kubernetes/pause
+    securityContext:
+      privileged: true
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-init-container
+  labels:
+    pod-security-standards/policy: "Baseline"
+    pod-security-standards/control: "Privileged_Containers"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+  initContainers:
+  - name: privileged-init-container
+    image: busybox
+    command: ["sleep", "1"]
+    securityContext:
+      privileged: true
+  containers:
+  - name: privileged-container
+    image: kubernetes/pause
+    securityContext:
+      privileged: true

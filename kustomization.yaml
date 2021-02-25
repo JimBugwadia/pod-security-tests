@@ -1,0 +1,5 @@
+bases:
+- restricted
+
+resources:
+- good-pod.yaml

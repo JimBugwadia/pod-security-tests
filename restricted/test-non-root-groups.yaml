@@ -1,0 +1,88 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fs-group0
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Non-root_groups"     
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+    fsGroup: 0
+  containers: 
+  - name: fs-group
+    image: busybox
+    command: ["sleep", "9999"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: supplemental-groups0
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Non-root_groups"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+    supplementalGroups:
+    - 0
+  containers: 
+  - name: supplemental-groups
+    image: busybox
+    command: ["sleep", "9999"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: run-as-group0-pod
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Non-root_groups"    
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+    runAsGroup: 0
+  containers: 
+  - name: run-as-group
+    image: busybox
+    command: ["sleep", "9999"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fs-group-ctnr
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Non-root_groups"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+    fsGroup: 0
+  containers: 
+  - name: fs-group-ctnr
+    image: busybox
+    command: ["sleep", "9999"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: run-as-group-ctnr
+  labels:
+    pod-security-standards/policy: "Restricted"
+    pod-security-standards/control: "Non-root_groups"  
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000       
+  containers: 
+  - name: run-as-group-ctnr
+    image: busybox
+    command: ["sleep", "9999"]
+    securityContext:
+      runAsGroup: 0
+
