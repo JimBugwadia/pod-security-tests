@@ -61,7 +61,7 @@ For example, this command shows pods that test the `Restricted` policy controls:
 kubectl get pods -l "pod-security-standards/policy=Restricted"
 ```
 
-This command shows pods that test both policies:
+This command shows pods that test both policies and displays pod labels:
 
 
 ```sh
