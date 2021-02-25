@@ -96,7 +96,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> false<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-host-namespaces.yaml" target="_blank">test-disallow-host-namespaces.yaml</a>
+                <a href="baseline/test-disallow-host-namespaces.yaml" target="_blank">test-disallow-host-namespaces.yaml</a>
             </td>
 		</tr>
 		<tr>
@@ -109,7 +109,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> false, undefined/nil<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-privileged-containers.yaml" target="_blank">test-disallow-privileged-containers.yaml</a>
+                <a href="baseline/test-disallow-privileged-containers.yaml" target="_blank">test-disallow-privileged-containers.yaml</a>
             </td>
 		</tr>
 		<tr>
@@ -122,7 +122,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> empty (or restricted to a known list)<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-adding-capabilities.yaml" target="_blank">test-disallow-adding-capabilities.yaml</a>
+                <a href="baseline/test-disallow-adding-capabilities.yaml" target="_blank">test-disallow-adding-capabilities.yaml</a>
             </td>
 		</tr>
 		<tr>
@@ -134,7 +134,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> undefined/nil<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-host-path.yaml" target="_blank">test-disallow-host-path.yaml</a>
+                <a href="baseline/test-disallow-host-path.yaml" target="_blank">test-disallow-host-path.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -147,7 +147,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> 0, undefined (or restricted to a known list)<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-host-ports.yaml" target="_blank">test-disallow-host-ports.yaml</a>
+                <a href="baseline/test-disallow-host-ports.yaml" target="_blank">test-disallow-host-ports.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -159,7 +159,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> 'runtime/default', undefined<br>
 			</td>
             <td>
-                <a href="tests/default/test-restrict-apparmor-profiles.yaml" target="_blank">test-restrict-apparmor-profiles.yaml</a>
+                <a href="baseline/test-restrict-apparmor-profiles.yaml" target="_blank">test-restrict-apparmor-profiles.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -173,7 +173,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> undefined/nil<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-selinux.yaml" target="_blank">test-disallow-selinux.yaml</a>
+                <a href="baseline/test-disallow-selinux.yaml" target="_blank">test-disallow-selinux.yaml</a>
             </td>                 
 		</tr>
 		<tr>
@@ -186,7 +186,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				<br><b>Allowed Values:</b> undefined/nil, 'Default'<br>
 			</td>
             <td>
-                <a href="tests/default/test-disallow-proc-mount.yaml" target="_blank">test-disallow-proc-mount.yaml</a>
+                <a href="baseline/test-disallow-proc-mount.yaml" target="_blank">test-disallow-proc-mount.yaml</a>
             </td>      
 		</tr>
 		<tr>
@@ -204,7 +204,7 @@ The Baseline/Default policy is aimed at ease of adoption for common containerize
 				undefined/empty<br>
 			</td>
             <td>
-                <a href="tests/default/test-restrict-sysctls.yaml" target="_blank">test-restrict-sysctls.yaml</a>
+                <a href="baseline/test-restrict-sysctls.yaml" target="_blank">test-restrict-sysctls.yaml</a>
             </td>              
 		</tr>
 	</tbody>
@@ -257,7 +257,7 @@ well as lower-trust users.The following listed controls should be enforced/disal
 				<br><b>Allowed Values:</b> undefined/nil<br>
 			</td>
             <td>
-                <a href="tests/restricted/test-restrict-volume-types.yaml" target="_blank">test-restrict-volume-types.yaml</a>
+                <a href="restricted/test-restrict-volume-types.yaml" target="_blank">test-restrict-volume-types.yaml</a>
             </td>             
 		</tr>
 		<tr>
@@ -270,7 +270,7 @@ well as lower-trust users.The following listed controls should be enforced/disal
 				<br><b>Allowed Values:</b> false<br>
 			</td>
             <td>
-                <a href="tests/restricted/test-deny-privilege-escalation.yaml" target="_blank">test-deny-privilege-escalation.yaml</a>
+                <a href="restricted/test-deny-privilege-escalation.yaml" target="_blank">test-deny-privilege-escalation.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -284,7 +284,7 @@ well as lower-trust users.The following listed controls should be enforced/disal
 				<br><b>Allowed Values:</b> true<br>
 			</td>
             <td>
-                <a href="tests/restricted/test-require-run-as-nonroot.yaml" target="_blank">test-require-run-as-nonroot.yaml</a>
+                <a href="restricted/test-require-run-as-nonroot.yaml" target="_blank">test-require-run-as-nonroot.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -302,7 +302,7 @@ well as lower-trust users.The following listed controls should be enforced/disal
 				undefined / nil (except for `*.runAsGroup`)<br>
 			</td>
             <td>
-                <a href="tests/restricted/test-non-root-groups.yaml" target="_blank">test-non-root-groups.yaml</a>
+                <a href="restricted/test-non-root-groups.yaml" target="_blank">test-non-root-groups.yaml</a>
             </td>            
 		</tr>
 		<tr>
@@ -318,7 +318,7 @@ well as lower-trust users.The following listed controls should be enforced/disal
 				undefined / nil<br>
 			</td>
             <td>
-                <a href="tests/restricted/test-restrict-seccomp.yaml" target="_blank">test-restrict-seccomp.yaml</a>
+                <a href="restricted/test-restrict-seccomp.yaml" target="_blank">test-restrict-seccomp.yaml</a>
             </td>            
 		</tr>
 	</tbody>
