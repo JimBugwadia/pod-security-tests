@@ -53,6 +53,22 @@ All test pods are have the following labels defined:
 * `pod-security-standards/policy` with value of `Baseline` or `Restricted`.
 * `pod-security-standards/control` with a value that identifies the security control being tested.
 
+You can view test pods for a policy level using these labels. 
+
+For example, this command shows pods that test the `Restricted` policy controls:
+
+```sh
+kubectl get pods -l "pod-security-standards/policy=Restricted"
+```
+
+This command shows pods that test both policies:
+
+
+```sh
+kubectl get pods -l "pod-security-standards/policy in (Restricted, Baseline)" --show-labels
+```
+
+
 ## Pod Security Controls to Test Mappings
 
 The tables below show each control specified in the [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) and the associated policies and mappings to test YAMLs.
