@@ -20,7 +20,7 @@ Or, apply `Baseline` or `Restricted` YAMLs by appending the appropriate folder n
   * Baseline: `kustomize build https://github.com/JimBugwadia/pod-security-tests/baseline`
   * Restricted: `kustomize build https://github.com/JimBugwadia/pod-security-tests/restricted`
 
-3. Check the created pods
+**3. Check the created pods**
 
 The command below checks pods in the `default` namespace. For this test, 
 
